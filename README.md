@@ -90,7 +90,7 @@ MyAppName for.
 3. Use `pm2 ls` to show running apps, `pm2 stop 'index/name'` to stop an app,
 `pm2 start 'index/name'` to start the app again, `pm2 delete 'index/name'` to
 remove the app from the daemon, and `pm2 logs 'index/name'` to inspect the logs
-of an app.
+of an app. Lastly, run `pm2 startup` to know how to start the daemon automatically.
 
 ### Certificate
 
