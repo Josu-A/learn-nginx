@@ -98,6 +98,21 @@ An example of a A type DNS record config file, where an app is listening in port
 `3000`, and the server name is `mydomain`.
 
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./examples/a.nginx) -->
+<!-- The below code snippet is automatically added from ./examples/a.nginx -->
+```nginx
+server {
+    server_name mydomain;
+
+    listen 80;
+    listen [::]:80;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
 ### CNAME record
@@ -106,6 +121,17 @@ An example of a CNAME type DNS record config file, where we want the domain
 `mydomain` to redirect the request into the `mydomaintoredirectto` server name.
 
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./examples/cname.nginx) -->
+<!-- The below code snippet is automatically added from ./examples/cname.nginx -->
+```nginx
+server {
+    server_name mydomain;
+
+    listen 80;
+    listen [::]:80;
+
+    return 301 $scheme://mydomaintoredirectto$request_uri;
+}
+```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
 <p align="right">(<a href="#top">go to top</a>)</p>
