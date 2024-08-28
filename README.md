@@ -97,8 +97,9 @@ that, we'll use Let's Encrypt's certbot:
 An example of a A type DNS record config file, where an app is listening in port
 `3000`, and the server name is `mydomain`.
 
-
+https://github.com/Josu-A/learn-nginx/blob/2311edd06d1715c9fe30fcd346c279da0067f085/examples/a.nginx
 ```nginx
+https://github.com/Josu-A/learn-nginx/blob/2311edd06d1715c9fe30fcd346c279da0067f085/examples/a.nginx
 ```
 
 ### CNAME record
