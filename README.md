@@ -97,17 +97,15 @@ that, we'll use Let's Encrypt's certbot:
 An example of a A type DNS record config file, where an app is listening in port
 `3000`, and the server name is `mydomain`.
 
-https://github.com/Josu-A/learn-nginx/blob/2311edd06d1715c9fe30fcd346c279da0067f085/examples/a.nginx
-```nginx
-https://github.com/Josu-A/learn-nginx/blob/2311edd06d1715c9fe30fcd346c279da0067f085/examples/a.nginx
-```
+<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./examples/a.nginx) -->
+<!-- MARKDOWN-AUTO-DOCS:END -->
 
 ### CNAME record
 
 An example of a CNAME type DNS record config file, where we want the domain
 `mydomain` to redirect the request into the `mydomaintoredirectto` server name.
 
-```nginx
-```
+<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./examples/cname.nginx) -->
+<!-- MARKDOWN-AUTO-DOCS:END -->
 
 <p align="right">(<a href="#top">go to top</a>)</p>

@@ -1,0 +1,19 @@
+name: Update Readme
+
+on:
+  push:
+    paths:
+      - 'examples/**'
+
+jobs:
+  auto-update-readme:
+    name: Auto update README
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Markdown autodocs
+        uses: dineshsonachalam/markdown-autodocs@v1.0.4
+        with:
+          output_file_paths: '[./README.md]'
