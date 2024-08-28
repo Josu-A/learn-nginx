@@ -102,6 +102,7 @@ that, we'll use Let's Encrypt's certbot:
     sudo snap install core
     sudo snap refresh core
     sudo snap install --classic certbot
+    sudo ln -s /snap/bin/certbot /usr/bin/certbot
     ```
 
 2. Have your web app active and accesible.
