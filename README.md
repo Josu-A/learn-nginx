@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-# Deploying an app with Nginx & Let's Encrypt
+# Deploying an app with Nginx, PM2 & Let's Encrypt
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -17,6 +17,7 @@
             <a href="#usage">Usage</a>
             <ul>
                 <li><a href="#server">Server</a></li>
+                <li><a href="#running">Running</a></li>
                 <li><a href="#certificate">Certificate</a></li>
             </ul>
         </li>
@@ -68,6 +69,28 @@ sudo apt install nginx
     ```bash
     sudo service nginx restart
     ```
+
+### Running
+
+To have the server open while we're logged out of the shell, we'll use the
+daemon [PM2](https://pm2.io).
+
+1. Install PM2.
+    ```bash
+    npm install pm2 -g
+    ```
+
+2. Go to the server's path and run it using PM2. Choose a name to substitute
+MyAppName for.
+    ```bash
+    cd path/to/my/server
+    pm2 start index.js --name MyAppName
+    ```
+
+3. Use `pm2 ls` to show running apps, `pm2 stop 'index/name'` to stop an app,
+`pm2 start 'index/name'` to start the app again, `pm2 delete 'index/name'` to
+remove the app from the daemon, and `pm2 logs 'index/name'` to inspect the logs
+of an app.
 
 ### Certificate
 
