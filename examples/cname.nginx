@@ -1,0 +1,8 @@
+server {
+    server_name mydomain;
+
+    listen 80;
+    listen [::]:80;
+
+    return 301 $scheme://mydomaintoredirectto$request_uri;
+}
